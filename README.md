@@ -12,7 +12,7 @@ Hugo versions currently provided are:
 
 GoLang 1.8.3-alpine
 
-Hugo v0.21
+Hugo v0.25.1
 
 ## How to use this image on Digital Garage with OpenShift and Kubernetes?
 
@@ -24,7 +24,7 @@ $ oc new-app thedigitalgarage/s2i-hugo:latest~http://github.com/<org>/<hugo-repo
 
 ## Usage
 
-For information about usage of Dockerfile for Hugo v0.21, see usage documentation.
+For information about usage of Dockerfile for Hugo v0.25.1, see usage documentation.
 
 ## Repository organization
 
