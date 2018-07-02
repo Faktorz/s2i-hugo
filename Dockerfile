@@ -1,6 +1,6 @@
 FROM golang:alpine
 
-MAINTAINER the Digital Garage <support@thedigitalgarage.io>
+MAINTAINER FaktorZ <info@faktorz.com>
 
 LABEL io.openshift.s2i.scripts-url=image:///usr/libexec/s2i
 
@@ -13,11 +13,12 @@ RUN mkdir -p /opt/app-root/src/static && \
 
 WORKDIR /opt/app-root/src
 
+COPY ./s2i/* /usr/libexec/s2i/
+
 RUN apk add --update git mercurial binutils && \
     go get -v -u github.com/gohugoio/hugo && \
     strip /go/bin/hugo && \
     apk del git mercurial binutils  && \
     rm -rf /go/src /go/pkg
 
-COPY ./s2i/* /usr/libexec/s2i/
 USER 1001
